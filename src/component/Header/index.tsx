@@ -10,7 +10,7 @@ export default function Header() {
     <>
       <Box p={4} ml="auto">
         <HStack alignItems={"center"}>
-          <Text  fontSize={'28px'} fontWeight={'bold'}>
+          <Text  fontSize={'2xl'} fontWeight={'bold'}>
             Get your Daily Quotes
           </Text>
         </HStack>

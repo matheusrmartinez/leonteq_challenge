@@ -1,4 +1,4 @@
-import { Box, Button, ChakraProvider, Text } from "@chakra-ui/react";
+import { Box, Button, ChakraProvider, Divider, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { theme } from "./styles/theme";
 import Header from "./component/Header";
@@ -32,19 +32,17 @@ function App() {
     <ChakraProvider resetCSS={true} theme={theme}>
       <Header />
       <Box p={4}>
-        <Box
-          pt={2}
-          display={"flex"}
-          width={"25%"}
-          justifyContent={"space-between"}
-        >
-          <Button onClick={handleAddQuote}>Get a Quote</Button>
-          <Button onClick={removeAllQuotes}>Remove All Quotes</Button>
+        <Box pt={2} display={"flex"} justifyContent={['center', 'flex-start']} flexDirection={["column", "row", "row", "row"]}>
+          <Button size={'sm'} onClick={handleAddQuote}>Get a Quote</Button>
+          <Button size={'sm'} mt={[2, 0]} ml={[0, 2]} onClick={removeAllQuotes}>
+            Remove All Quotes
+          </Button>
         </Box>
         <Box pl={1} pt={"5vh"}>
-          <Text size={""} fontWeight={"bold"}>
-            User Quote List
-          </Text>
+          <Box display={"flex"} fontWeight={"bold"}  justifyContent={['center', 'normal']}>
+            <Text>User Quote List</Text>
+          </Box>
+          <Divider display={'horizontal'}/>
           <UserQuoteList
             userQuotes={userQuotes}
             handleRemoveQuote={handleRemoveQuote}

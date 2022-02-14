@@ -16,19 +16,37 @@ export default function UserQuoteList({
           pt={4}
           key={index}
           display={"flex"}
+          flexDirection={["column", "row"]}
           alignItems={"center"}
-          width={"100%"}
         >
-          <Text noOfLines={4} maxWidth={"85%"}>
-            {userQuote}
-          </Text>
-          <Button
-            size={"sm"}
-            ml={4}
-            onClick={() => handleRemoveQuote(userQuote)}
+          <Box
+            border={"1px solid black"}
+            width={"60%"}
+            p={2}
+            borderRadius={"lg"}
+            justifyContent={["center", "flex-start"]}
+            display={"flex"}
           >
-            Remove Quote
-          </Button>
+            <Text
+              noOfLines={4}
+              fontSize={"sm"}
+              borderRadius={"sm"}
+              maxWidth={"85%"}
+              textAlign={"justify"}
+            >
+              {userQuote}
+            </Text>
+          </Box>
+          <Box justifyContent={'center'} display={'block'}>
+            <Button
+              mt={[5, 0]}
+              size={"sm"}
+              ml={[0,4]}
+              onClick={() => handleRemoveQuote(userQuote)}
+            >
+              Remove Quote
+            </Button>
+          </Box>
         </Box>
       ))}
     </>
